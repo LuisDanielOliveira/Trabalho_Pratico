@@ -4,17 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCity"
+    tools:context=".AddNotas"
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edit_word"
+        android:id="@+id/input_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:inputType="textAutoComplete"
         android:textSize="18sp"
+        android:hint="Titulo da Nota"
     />
+
+    <EditText
+        android:id="@+id/input_notas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoComplete"
+        android:textSize="18sp"
+        android:hint="Escrever a nota aqui"
+        />
 
     <Button
         android:id="@+id/button_save"
