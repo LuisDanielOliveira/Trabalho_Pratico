@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -27,6 +28,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Butão Mapa
+        val button_mapa = findViewById<Button>(R.id.button_mapa)
+        button_mapa.setOnClickListener {
+            val intent = Intent(this@MainActivity, MapsActivity::class.java)
+            startActivityForResult(intent, newWordActivityRequestCode)
+        }
+
+
+
         // recycler view
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = NotasAdapter(this)
@@ -40,6 +50,14 @@ class MainActivity : AppCompatActivity() {
             // Update the cached copy of the words in the adapter.
             titulo?.let { adapter.setNotas(it) }
         })
+
+        //Button Pagina de Login
+/*
+        val btnGoToLogin = findViewById<Button>(R.id.button_goToLogin)
+        btnGoToLogin.setOnClickListener{
+            val intent = Intent(this@MainActivity, )
+        }
+*/
 
         //Fab
         val fab = findViewById<FloatingActionButton>(R.id.fab)
